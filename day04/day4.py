@@ -1,7 +1,8 @@
 # create 2d array containing contents of puzzle
 # & insert a line of ' ' chars at the right side
 # and the bottom to break up any matches that roll
-# off the side of the puzzle
+# off the side of the puzzle and wrap around to find
+# a match on the other side
 # (... it took an embarrassingly long time to
 #      diagnose this was happening)
 puzzle = []
@@ -80,15 +81,13 @@ for line in range(len(puzzle)):
     for char in range(len(puzzle[line])):
         if puzzle[line][char].upper() == 'A':
             # print("Potential XMAS")
-            # for all cardinal and ordinal: N, S, E, W, NE, NW, SE, SW
-            # checking if index is out of range of list
+            # check each diagonal
             # ignore index errors and pass
             directions = {
                 "nw" : '',
                 "se" : '',
             }
             for x in range(-1, 2):
-                # time for nasty. avert ye eyes. could have been avoided by not being so lazy
                 try:
                     directions["se"] += puzzle[line+x][char+x]
                 except IndexError:
@@ -97,9 +96,7 @@ for line in range(len(puzzle)):
                     directions["nw"] += puzzle[line-x][char+x]
                 except IndexError:
                     pass
-            # print(directions)
             if ((directions["se"] == "MAS") or (directions["se"] == "SAM")) and ((directions["nw"] == "MAS") or (directions["nw"] == "SAM")):
                 matches = matches + 1
-                # print(str(matches) + " found starting from origin point of " + str(line) + " " + str(char))
 
 print(matches)
