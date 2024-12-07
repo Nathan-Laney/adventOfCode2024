@@ -1,7 +1,7 @@
 import re
 pattern = "mul\\((\\d+),(\\d+)\\)"
 sum = 0
-with open('day3.txt', 'r') as file:
+with open('input.txt', 'r') as file:
     match = re.findall(pattern, file.read())
     if match:
         for mulOp in match:
@@ -12,7 +12,7 @@ print(sum)
 # part 2
 pattern = "don't\\(\\).*?do\\(\\)" #everything between don't and do
 sum = 0
-with open('day3.txt', 'r') as file:
+with open('input.txt', 'r') as file:
     text = "do()" + file.read() + "don't()"
     match = re.findall(pattern, text)
     if match:

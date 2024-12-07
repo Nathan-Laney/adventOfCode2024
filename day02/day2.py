@@ -30,7 +30,7 @@ def trialUnsafeReportWithDampener(report):
 
 reports = []
 
-with open('day2.txt', 'r') as file:
+with open('input.txt', 'r') as file:
     for line in file:
         # The following line takes one line of the file, converts it to an array of ints, 
         # and appends it to the larger 'reports' array to create 

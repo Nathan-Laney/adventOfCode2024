@@ -47,7 +47,7 @@ def fixCompliance(orderedList):
 def runDay1():
     # take in file and do the thing
     middleValue = 0
-    with open('day5.txt', 'r') as file:
+    with open('input.txt', 'r') as file:
         for line in file:
             if "|" in line:
                 defineRule(line)
@@ -66,7 +66,7 @@ def runDay2():
     # take in file and do the thing
     middleValue = 0
     nonCompliantMiddleValue = 0
-    with open('day5.txt', 'r') as file:
+    with open('input.txt', 'r') as file:
         for line in file:
             if "|" in line:
                 defineRule(line)

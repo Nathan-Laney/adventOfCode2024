@@ -6,7 +6,7 @@
 # (... it took an embarrassingly long time to
 #      diagnose this was happening)
 puzzle = []
-with open('day4.txt', 'r') as file:
+with open('input.txt', 'r') as file:
     for line in file:
         puzzle.append(list(line.strip() + " "))
     # print(len(puzzle[-1]))
